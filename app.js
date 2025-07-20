@@ -4,7 +4,7 @@ const cors = require('cors');
 const jobService = require('./jobService');
 
 const app = express();
-const port = 6000;
+const port = process.env.PORT || 6000;
 
 app.use(cors());
 app.use(express.json());
