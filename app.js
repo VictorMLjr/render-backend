@@ -22,14 +22,14 @@ app.post('/api/order', (req, res) => {
         port: 465,
         secure: true,
         auth: {
-            user: 'narrowblazedelta1@gmail.com',
-            pass: 'fpob fuaj hatq cfgw',
+            user: process.env.EMAIL_USER,
+            pass: process.env.EMAIL_PASS
         },
     });
 
     const mailOptions = {
         from: email,
-        to: 'narrowblazedelta1@gmail.com',
+        to: process.env.EMAIL_USER,
         subject: 'New Order Form Submission',
         text: `
             First Name: ${firstN}
